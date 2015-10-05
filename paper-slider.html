@@ -398,7 +398,12 @@ Custom property | Description | Default
       }
 
       this.async(function() {
-        this.fire('change');
+
+        if(this.transiting){
+        this.fire('change-down');
+        }else{
+          this.fire('change');
+        }
       });
 
       // cancel selection
